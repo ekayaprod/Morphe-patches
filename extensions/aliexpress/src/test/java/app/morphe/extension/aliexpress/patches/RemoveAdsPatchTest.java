@@ -12,8 +12,9 @@ public class RemoveAdsPatchTest {
 
     static class AdItem {}
     static class SponsoredProduct {}
-    static class AdvertisementInfo {}
+    static class advertisement {}
     static class NormalProduct {}
+    static class SomeClassWithadvertisementInName {}
 
     @Test
     public void filterAds_handlesNullList() {
@@ -32,7 +33,7 @@ public class RemoveAdsPatchTest {
             new NormalProduct(),
             new AdItem(),
             new SponsoredProduct(),
-            new AdvertisementInfo(),
+            new SomeClassWithadvertisementInName(),
             new NormalProduct(),
             null
         );
