@@ -2,7 +2,19 @@
   "mcpServers": {
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/app"]
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/app"
+      ]
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-server-sqlite-npx",
+        "/tmp/test.db"
+      ]
     }
   }
 }
