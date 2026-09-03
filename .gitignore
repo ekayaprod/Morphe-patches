@@ -8,3 +8,6 @@ gradle/wrapper/gradle-wrapper.jar
 local.properties
 META-INF/
 *.mpp
+.DS_Store
+__pycache__/
+fix.diff
