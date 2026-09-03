@@ -23,9 +23,9 @@ public final class RemoveAdsPatch {
 
     private static boolean isAdItem(Object item) {
         if (item == null) return false;
-        String cls = item.getClass().getName();
-        return cls.contains("AdItem")
-            || cls.contains("Sponsored")
+        String cls = item.getClass().getName().toLowerCase();
+        return cls.contains("aditem")
+            || cls.contains("sponsored")
             || cls.contains("advertisement");
     }
 }

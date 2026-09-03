@@ -7,10 +7,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class RemoveSponsoredItemsPatchTest {
+class AdItem {}
+class SponsoredProduct {}
+class NormalProduct {}
 
-    static class AdItem {}
-    static class NormalProduct {}
+public class RemoveSponsoredItemsPatchTest {
 
     @Test
     public void filterSearchResults_handlesNullList() {
@@ -24,10 +25,11 @@ public class RemoveSponsoredItemsPatchTest {
     }
 
     @Test
-    public void filterSearchResults_filtersAdItems() {
+    public void filterSearchResults_filtersAdItemsAndSponsored() {
         List<Object> input = Arrays.asList(
             new NormalProduct(),
             new AdItem(),
+            new SponsoredProduct(),
             new NormalProduct(),
             null
         );

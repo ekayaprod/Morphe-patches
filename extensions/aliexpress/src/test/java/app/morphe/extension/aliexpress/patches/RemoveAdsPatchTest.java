@@ -10,13 +10,12 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-public class RemoveAdsPatchTest {
+class NormalProductItem {}
+class SponsoredProductItem {}
+class CustomAdItemView {}
+class RandomAdvertisementView {}
 
-    // Mock classes for testing isAdItem reflection-based logic
-    public static class NormalProductItem {}
-    public static class SponsoredProductItem {}
-    public static class CustomAdItemView {}
-    public static class RandomadvertisementView {}
+public class RemoveAdsPatchTest {
 
     @Test
     public void testShouldShowAd() {
@@ -42,7 +41,7 @@ public class RemoveAdsPatchTest {
             new SponsoredProductItem(),
             new CustomAdItemView(),
             new NormalProductItem(),
-            new RandomadvertisementView()
+            new RandomAdvertisementView()
         );
 
         List<Object> result = RemoveAdsPatch.filterAds(items);
