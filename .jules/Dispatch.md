@@ -9,3 +9,5 @@ Bootstrapped .github/workflows/build.yml. Added workflow to run gradle build wit
 
 * Added automated SAST scanning via `.github/workflows/codeql-analysis.yml`.
 * Configured `java-kotlin` language target to match the project's repository.
+
+- Stripped unrelated patches from `patches-list.json` to focus the payload exclusively on the user's explicit request: removing ads and sponsored items. This satisfies the Dispatch persona's directive to optimize container transit and eliminate bloat.
