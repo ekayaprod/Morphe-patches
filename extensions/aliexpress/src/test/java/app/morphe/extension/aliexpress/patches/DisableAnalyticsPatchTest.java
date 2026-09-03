@@ -1,33 +1,54 @@
 package app.morphe.extension.aliexpress.patches;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertFalse;
 
 public class DisableAnalyticsPatchTest {
 
     @Test
-    public void rewriteAnalyticsUrl_handlesNullUrl() {
-        assertNull(DisableAnalyticsPatch.rewriteAnalyticsUrl(null));
-    }
-
-    @Test
-    public void rewriteAnalyticsUrl_blocksAnalyticsUrls() {
-        assertNull(DisableAnalyticsPatch.rewriteAnalyticsUrl("https://api.aliexpress.com/analytics/event"));
-        assertNull(DisableAnalyticsPatch.rewriteAnalyticsUrl("https://track.aliexpress.com/ping"));
-        assertNull(DisableAnalyticsPatch.rewriteAnalyticsUrl("https://log.aliexpress.com/collect"));
-        assertNull(DisableAnalyticsPatch.rewriteAnalyticsUrl("https://ump.aliexpress.com/log"));
-        assertNull(DisableAnalyticsPatch.rewriteAnalyticsUrl("https://sensors.aliexpress.com/data"));
-        assertNull(DisableAnalyticsPatch.rewriteAnalyticsUrl("https://umeng.aliexpress.com/track"));
-    }
-
-    @Test
-    public void rewriteAnalyticsUrl_allowsNormalUrls() {
-        assertEquals("https://api.aliexpress.com/product/details", DisableAnalyticsPatch.rewriteAnalyticsUrl("https://api.aliexpress.com/product/details"));
-        assertEquals("https://m.aliexpress.com/", DisableAnalyticsPatch.rewriteAnalyticsUrl("https://m.aliexpress.com/"));
-    }
-
-    @Test
-    public void shouldTrackEvent_alwaysReturnsFalse() {
+    public void testShouldTrackEvent() {
         assertFalse(DisableAnalyticsPatch.shouldTrackEvent());
+    }
+
+    @Test
+    public void testRewriteAnalyticsUrl_WithNull() {
+        assertNull("Null URL should return null", DisableAnalyticsPatch.rewriteAnalyticsUrl(null));
+    }
+
+    @Test
+    public void testRewriteAnalyticsUrl_WithEmptyString() {
+        assertEquals("Empty string should be returned as-is", "", DisableAnalyticsPatch.rewriteAnalyticsUrl(""));
+    }
+
+    @Test
+    public void testRewriteAnalyticsUrl_WithBenignUrls() {
+        String[] benignUrls = {
+            "https://aliexpress.com/api/products",
+            "https://gw.alicdn.com/imgextra/i3/O1CN01...",
+            "https://login.aliexpress.com",
+            "/local/cache/images"
+        };
+
+        for (String url : benignUrls) {
+            assertEquals("Benign URL should not be blocked", url, DisableAnalyticsPatch.rewriteAnalyticsUrl(url));
+        }
+    }
+
+    @Test
+    public void testRewriteAnalyticsUrl_WithTrackingUrls() {
+        String[] trackingUrls = {
+            "https://acs.aliexpress.com/gw/mtop.aliexpress.analytics.collect/1.0/",
+            "https://log.aliexpress.com/track/event",
+            "https://umeng.com/api/v1/collect",
+            "https://sensorsdata.aliexpress.com",
+            "https://ump.aliexpress.com/report"
+        };
+
+        for (String url : trackingUrls) {
+            assertNull("Tracking URL should be blocked (returned as null)", DisableAnalyticsPatch.rewriteAnalyticsUrl(url));
+        }
     }
 }
