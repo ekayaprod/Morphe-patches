@@ -15,6 +15,7 @@ patches {
 dependencies {
     implementation(libs.gson)
     implementation(libs.morphe.patches.library)
+    testImplementation("junit:junit:4.13.2")
 }
 
 tasks {
