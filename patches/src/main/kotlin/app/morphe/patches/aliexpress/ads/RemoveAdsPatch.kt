@@ -18,7 +18,10 @@ val removeAdsPatch = bytecodePatch(
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {
-        AdcInitFingerprint.method.apply {
+        val targetMethod = AdcInitFingerprint.methodOrNull ?: throw IllegalStateException(
+            "Failed to resolve target method for AdcInitFingerprint. Ensure the fingerprint matches the current application version."
+        )
+        targetMethod.apply {
             addInstructions(
                 0,
                 """
