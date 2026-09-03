@@ -16,7 +16,7 @@ class RemoveAdsPatchTest {
     @Test
     fun verifyAdcInitFingerprintProperties() {
         assertEquals("V", AdcInitFingerprint.returnType)
-        assertEquals(1, AdcInitFingerprint.parameters.size)
-        assertEquals("Landroid/app/Application;", AdcInitFingerprint.parameters.first())
+        assertEquals(1, AdcInitFingerprint.parameters!!.size)
+        assertEquals("Landroid/app/Application;", AdcInitFingerprint.parameters!!.first())
     }
 }

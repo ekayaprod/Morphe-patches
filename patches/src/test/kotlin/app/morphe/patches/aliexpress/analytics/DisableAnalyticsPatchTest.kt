@@ -16,8 +16,8 @@ class DisableAnalyticsPatchTest {
     @Test
     fun verifyAnalyticsInitFingerprintProperties() {
         assertEquals("V", AnalyticsInitFingerprint.returnType)
-        assertEquals(2, AnalyticsInitFingerprint.strings.size)
-        assertEquals("setGlobalProperty", AnalyticsInitFingerprint.strings[0])
-        assertEquals("key is null or key is empty or value is null,please check it!", AnalyticsInitFingerprint.strings[1])
+        assertEquals(2, AnalyticsInitFingerprint.strings!!.size)
+        assertEquals("setGlobalProperty", AnalyticsInitFingerprint.strings!![0])
+        assertEquals("key is null or key is empty or value is null,please check it!", AnalyticsInitFingerprint.strings!![1])
     }
 }

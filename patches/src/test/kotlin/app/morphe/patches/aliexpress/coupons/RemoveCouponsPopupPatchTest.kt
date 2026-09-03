@@ -16,8 +16,8 @@ class RemoveCouponsPopupPatchTest {
     @Test
     fun verifyCouponFatigueFingerprintProperties() {
         assertEquals("Z", CouponFatigueFingerprint.returnType)
-        assertEquals(2, CouponFatigueFingerprint.strings.size)
-        assertEquals("search_coupon_floor_fatigue_", CouponFatigueFingerprint.strings[0])
-        assertEquals("618Coupon: ", CouponFatigueFingerprint.strings[1])
+        assertEquals(2, CouponFatigueFingerprint.strings!!.size)
+        assertEquals("search_coupon_floor_fatigue_", CouponFatigueFingerprint.strings!![0])
+        assertEquals("618Coupon: ", CouponFatigueFingerprint.strings!![1])
     }
 }
