@@ -1,6 +1,6 @@
 # ⚡ AliExpress Patches
 
-[![build: passing](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/Quantro100/Morphe-patches/actions)
+[![build: passing](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/ekayaprod/Morphe-patches/actions)
 
 A suite of surgical Morphe patches designed to strip out telemetry, nuke
 sponsored ads, and reclaim the core AliExpress experience.
@@ -27,7 +27,7 @@ sponsored ads, and reclaim the core AliExpress experience.
 Add this repository as a native patch source via deep link:
 
 ```url
-https://morphe.software/add-source?github=Quantro100/Morphe-patches
+https://morphe.software/add-source?github=ekayaprod/Morphe-patches
 ```
 
 1. Select the **AliExpress** app in Morphe Manager.
