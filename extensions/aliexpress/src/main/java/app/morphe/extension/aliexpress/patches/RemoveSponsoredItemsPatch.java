@@ -19,6 +19,7 @@ public final class RemoveSponsoredItemsPatch {
 
     private static boolean isSponsoredProduct(Object item) {
         if (item == null) return false;
-        return item.getClass().getName().contains("AdItem");
+        String cls = item.getClass().getName();
+        return cls.contains("AdItem") || cls.contains("Sponsored");
     }
 }
