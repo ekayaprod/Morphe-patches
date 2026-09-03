@@ -22,8 +22,8 @@ val hideSponsoredItemsPatch = bytecodePatch(
             addInstructions(
                 0,
                 """
-                const/4 v0, 0x0
-                invoke-static {v0}, Lapp/morphe/extension/aliexpress/patches/RemoveSponsoredItemsPatch;->filterSearchResults(Ljava/util/List;)Ljava/util/List;
+                invoke-static {p0}, Lapp/morphe/extension/aliexpress/patches/RemoveSponsoredItemsPatch;->filterSearchResults(Ljava/util/List;)Ljava/util/List;
+                move-result-object p0
                 return-void
                 """.trimIndent(),
             )
