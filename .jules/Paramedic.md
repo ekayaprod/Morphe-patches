@@ -1,0 +1,2 @@
+- Replaced silent return  with  in  to ensure the application fails loud instead of silently dropping the security patch.
+- Replaced silent return 'val method = TamperCheckFingerprint.methodOrNull ?: return@execute' with 'TamperCheckFingerprint.method.apply' in 'BypassSignatureCheckPatch.kt' to ensure the application fails loud instead of silently dropping the security patch.
