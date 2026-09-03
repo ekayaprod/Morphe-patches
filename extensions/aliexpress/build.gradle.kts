@@ -14,7 +14,3 @@ dependencies {
     compileOnly(libs.annotation)
     compileOnly(libs.appcompat)
 }
-
-dependencies {
-    testImplementation(libs.junit)
-}
