@@ -1,0 +1,1 @@
+Target matrix exhausted. No flaky tests, blind sleeps, race conditions, or state leakage found in RemoveAdsPatch or RemoveSponsoredItemsPatch. Repository-wide sweep also found no valid targets. Zero relay entries logged to the task board.
