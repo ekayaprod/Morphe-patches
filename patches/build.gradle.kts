@@ -36,3 +36,7 @@ kotlin {
         freeCompilerArgs = listOf("-Xcontext-parameters")
     }
 }
+
+dependencies {
+    testImplementation(libs.junit)
+}
