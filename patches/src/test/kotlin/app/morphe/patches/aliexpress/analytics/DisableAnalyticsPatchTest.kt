@@ -14,8 +14,8 @@ class DisableAnalyticsPatchTest {
         assertEquals("V", fingerprint.returnType)
         assertNotNull(fingerprint.strings)
         assertEquals(2, fingerprint.strings?.size)
-        assertTrue(fingerprint.strings?.contains("setGlobalProperty") == true)
-        assertTrue(fingerprint.strings?.contains("key is null or key is empty or value is null,please check it!") == true)
+        assertTrue(fingerprint.strings?.contains("setGlobalProperty") ?: false)
+        assertTrue(fingerprint.strings?.contains("key is null or key is empty or value is null,please check it!") ?: false)
     }
 
     @Test
