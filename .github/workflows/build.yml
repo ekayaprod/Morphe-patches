@@ -32,4 +32,4 @@ jobs:
       - name: Build with Gradle
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gradle build
+        run: gradle build --no-daemon
