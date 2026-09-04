@@ -24,5 +24,13 @@ class DisableForcedUpdatesPatchTest {
         assertEquals("Disable forced updates", patch.name)
         assertEquals("Disables the forced update popup that prevents using older versions of the app.", patch.description)
         assertTrue(patch.default)
+
+        assertNotNull(patch.dependencies)
+        assertEquals(1, patch.dependencies?.size)
+        assertTrue(patch.dependencies?.contains("Bypass signature check") ?: false)
+
+        assertNotNull(patch.compatibility)
+        assertEquals(1, patch.compatibility?.size)
+        assertTrue(patch.compatibility?.contains(app.morphe.patches.aliexpress.utils.Constants.COMPATIBILITY_ALIEXPRESS) ?: false)
     }
 }
