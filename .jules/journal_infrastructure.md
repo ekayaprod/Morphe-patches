@@ -1,4 +1,1 @@
-- Rerolled `.github/workflows/codeql-analysis.yml` from scratch.
-- Replaced floating `ubuntu-latest` with pinned `ubuntu-24.04`.
-- Pinned `github/codeql-action/init` to SHA `6bb031afdd8eb862ea3fc1848194185e076637e5` (v3).
-- Pinned `github/codeql-action/analyze` to SHA `6bb031afdd8eb862ea3fc1848194185e076637e5` (v3).
+- **Graceful Abort**: Executed a Graceful Abort and full revert. The repository contains pre-existing Kotlin compilation errors (`Cannot access 'var dependencies...: it is protected`) that cause the CI build to fail on the `main` branch. Fixing these application source code errors violates the strict infrastructure-only mutation domain rule.
