@@ -15,7 +15,7 @@ val enableImageSavingPatch = bytecodePatch(
     description = "Enables saving product images directly to the device gallery.",
     default = false
 ) {
-    dependencies = listOf("Bypass signature check")
+    dependencies("Bypass signature check")
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {

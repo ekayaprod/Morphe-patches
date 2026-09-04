@@ -15,7 +15,7 @@ val hideSponsoredItemsPatch = bytecodePatch(
     description = "Filters out sponsored and promoted products from search results.",
     default = true
 ) {
-    dependencies = listOf("Bypass signature check")
+    dependencies("Bypass signature check")
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {

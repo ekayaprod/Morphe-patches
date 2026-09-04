@@ -15,7 +15,7 @@ val removeAdsPatch = bytecodePatch(
     description = "Removes sponsored products and advertisements from the AliExpress home feed and search results.",
     default = true
 ) {
-    dependencies = listOf("Bypass signature check")
+    dependencies("Bypass signature check")
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {

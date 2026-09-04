@@ -15,7 +15,7 @@ val removeCouponsPopupPatch = bytecodePatch(
     description = "Removes the coupon and promotion popup dialogs.",
     default = true
 ) {
-    dependencies = listOf("Bypass signature check")
+    dependencies("Bypass signature check")
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {

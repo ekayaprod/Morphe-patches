@@ -15,7 +15,7 @@ val disableForcedUpdatesPatch = bytecodePatch(
     description = "Disables the forced update popup that prevents using older versions of the app.",
     default = true
 ) {
-    dependencies = listOf("Bypass signature check")
+    dependencies("Bypass signature check")
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {

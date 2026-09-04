@@ -15,7 +15,7 @@ val disablePromotionsNotificationsPatch = bytecodePatch(
     description = "Disables promotional push notifications for deals and coupons.",
     default = true
 ) {
-    dependencies = listOf("Bypass signature check")
+    dependencies("Bypass signature check")
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {

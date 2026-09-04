@@ -15,7 +15,7 @@ val disableAnalyticsPatch = bytecodePatch(
     description = "Blocks analytics and tracking sent to AliExpress servers.",
     default = true
 ) {
-    dependencies = listOf("Bypass signature check")
+    dependencies("Bypass signature check")
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {
