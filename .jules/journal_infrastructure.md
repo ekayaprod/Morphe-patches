@@ -1,5 +1,4 @@
-- Rerolled `.github/workflows/build.yml` from scratch.
+- Rerolled `.github/workflows/codeql-analysis.yml` from scratch.
 - Replaced floating `ubuntu-latest` with pinned `ubuntu-24.04`.
-- Pinned `actions/checkout` to SHA `11d5960a326750d5838078e36cf38b85af677262` (v4).
-- Pinned `actions/setup-java` to SHA `cf277c60eb25467037889841efdb72551f06f6c3` (v4).
-- Pinned `gradle/actions/setup-gradle` to SHA `0b6dd653ba04f4f93bf581ec31e66cbd7dcb644d` (v4).
+- Pinned `github/codeql-action/init` to SHA `6bb031afdd8eb862ea3fc1848194185e076637e5` (v3).
+- Pinned `github/codeql-action/analyze` to SHA `6bb031afdd8eb862ea3fc1848194185e076637e5` (v3).
