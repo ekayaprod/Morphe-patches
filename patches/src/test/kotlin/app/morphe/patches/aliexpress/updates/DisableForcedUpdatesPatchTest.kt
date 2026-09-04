@@ -27,7 +27,7 @@ class DisableForcedUpdatesPatchTest {
 
         assertNotNull(patch.dependencies)
         assertEquals(1, patch.dependencies?.size)
-        assertTrue(patch.dependencies?.contains("Bypass signature check") ?: false)
+        assertTrue(patch.dependencies?.first()?.name == "Bypass signature check")
 
         assertNotNull(patch.compatibility)
         assertEquals(1, patch.compatibility?.size)
