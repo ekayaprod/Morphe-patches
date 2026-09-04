@@ -14,6 +14,7 @@ val disableSplashScreenPatch = bytecodePatch(
     name = "Disable splash screen",
     description = "Skips the splash screen on app launch.",
     default = false,
+    dependencies = listOf("Bypass signature check"),
 ) {
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
