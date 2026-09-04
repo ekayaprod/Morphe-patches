@@ -15,7 +15,7 @@ val disableAnalyticsPatch = bytecodePatch(
     description = "Blocks analytics and tracking sent to AliExpress servers.",
     default = true
 ) {
-    dependencies("Bypass signature check")
+    dependencies(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch)
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {

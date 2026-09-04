@@ -15,7 +15,7 @@ val disableSplashScreenPatch = bytecodePatch(
     description = "Skips the splash screen on app launch.",
     default = false
 ) {
-    dependencies("Bypass signature check")
+    dependencies(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch)
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {

@@ -15,7 +15,7 @@ val removeAdsPatch = bytecodePatch(
     description = "Removes sponsored products and advertisements from the AliExpress home feed and search results.",
     default = true
 ) {
-    dependencies("Bypass signature check")
+    dependencies(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch)
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {
