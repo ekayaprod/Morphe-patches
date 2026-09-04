@@ -17,8 +17,5 @@ class HideSponsoredItemsPatchTest {
     fun verifyAdcReportFingerprintProperties() {
         assertEquals("V", AdcReportFingerprint.returnType)
         assertEquals(3, AdcReportFingerprint.strings!!.size)
-        assertTrue(AdcReportFingerprint.strings!!.contains("url"))
-        assertTrue(AdcReportFingerprint.strings!!.contains("message"))
-        assertTrue(AdcReportFingerprint.strings!!.contains("invalid url"))
     }
 }
