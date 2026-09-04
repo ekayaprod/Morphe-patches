@@ -24,12 +24,10 @@ val removeAdsPatch = bytecodePatch(
                 """
                 invoke-static {}, Lapp/morphe/extension/aliexpress/patches/RemoveAdsPatch;->shouldShowAd()Z
                 move-result v0
-                if-nez v0, :cond_0
-                return-void
-                :cond_0
+                if-nez v0, :cond_skip
                 invoke-static {p0}, Lapp/morphe/extension/aliexpress/patches/RemoveAdsPatch;->filterAds(Ljava/util/List;)Ljava/util/List;
                 move-result-object p0
-                return-void
+                :cond_skip
                 """.trimIndent(),
             )
         }
