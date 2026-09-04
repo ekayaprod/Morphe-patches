@@ -14,18 +14,10 @@ public final class RemoveAdsPatch {
         if (items == null || items.isEmpty()) return items;
         List<Object> filtered = new ArrayList<>();
         for (Object item : items) {
-            if (!isAdItem(item)) {
+            if (!ItemUtils.isAdOrSponsored(item)) {
                 filtered.add(item);
             }
         }
         return filtered;
-    }
-
-    private static boolean isAdItem(Object item) {
-        if (item == null) return false;
-        String cls = item.getClass().getName().toLowerCase();
-        return cls.contains("aditem")
-            || cls.contains("sponsored")
-            || cls.contains("advertisement");
     }
 }

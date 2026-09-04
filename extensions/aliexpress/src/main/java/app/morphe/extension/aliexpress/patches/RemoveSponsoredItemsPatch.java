@@ -10,16 +10,10 @@ public final class RemoveSponsoredItemsPatch {
         if (results == null || results.isEmpty()) return results;
         List<Object> filtered = new ArrayList<>();
         for (Object item : results) {
-            if (!isSponsoredProduct(item)) {
+            if (!ItemUtils.isAdOrSponsored(item)) {
                 filtered.add(item);
             }
         }
         return filtered;
-    }
-
-    private static boolean isSponsoredProduct(Object item) {
-        if (item == null) return false;
-        String cls = item.getClass().getName().toLowerCase();
-        return cls.contains("aditem") || cls.contains("sponsored");
     }
 }
