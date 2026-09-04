@@ -16,7 +16,7 @@ class HideSponsoredItemsPatchTest {
 
     @Test
     fun verifyHideSponsoredItemsPatchDependencies() {
-        assertTrue(hideSponsoredItemsPatch.dependencies.contains("Bypass signature check"))
+        assertTrue(hideSponsoredItemsPatch.dependencies.any { it.name == "Bypass signature check" })
         assertEquals(COMPATIBILITY_ALIEXPRESS, hideSponsoredItemsPatch.compatibleWith)
     }
 
