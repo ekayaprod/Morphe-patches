@@ -14,6 +14,7 @@ val removeAffiliateTrackingPatch = bytecodePatch(
     name = "Remove affiliate tracking",
     description = "Removes affiliate tracking parameters from shared links.",
     default = true,
+    dependencies = listOf("Bypass signature check"),
 ) {
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
