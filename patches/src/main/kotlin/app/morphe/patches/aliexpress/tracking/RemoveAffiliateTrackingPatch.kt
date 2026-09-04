@@ -16,6 +16,7 @@ val removeAffiliateTrackingPatch = bytecodePatch(
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
+    dependencies = listOf("Bypass signature check")
 
     execute {
         TrackHelperFingerprint.method.apply {

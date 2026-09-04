@@ -16,6 +16,7 @@ val disableSplashScreenPatch = bytecodePatch(
     default = false,
 ) {
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
+    dependencies = listOf("Bypass signature check")
 
     execute {
         SplashShowFingerprint.method.apply {

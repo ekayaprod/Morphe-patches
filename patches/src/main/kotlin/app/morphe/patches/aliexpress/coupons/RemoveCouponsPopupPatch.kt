@@ -16,6 +16,7 @@ val removeCouponsPopupPatch = bytecodePatch(
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
+    dependencies = listOf("Bypass signature check")
 
     execute {
         CouponFatigueFingerprint.method.apply {

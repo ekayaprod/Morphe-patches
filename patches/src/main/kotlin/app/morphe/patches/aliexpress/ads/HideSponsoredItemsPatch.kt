@@ -16,6 +16,7 @@ val hideSponsoredItemsPatch = bytecodePatch(
     default = true,
 ) {
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
+    dependencies = listOf("Bypass signature check")
 
     execute {
         AdcReportFingerprint.method.apply {
