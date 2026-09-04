@@ -13,9 +13,9 @@ internal object MediaSaveFingerprint : Fingerprint(
 val enableImageSavingPatch = bytecodePatch(
     name = "Enable image saving",
     description = "Enables saving product images directly to the device gallery.",
-    default = false,
-    dependencies = listOf("Bypass signature check"),
+    default = false
 ) {
+    dependencies = listOf("Bypass signature check")
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {

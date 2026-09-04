@@ -13,9 +13,9 @@ internal object SplashShowFingerprint : Fingerprint(
 val disableSplashScreenPatch = bytecodePatch(
     name = "Disable splash screen",
     description = "Skips the splash screen on app launch.",
-    default = false,
-    dependencies = listOf("Bypass signature check"),
+    default = false
 ) {
+    dependencies = listOf("Bypass signature check")
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {

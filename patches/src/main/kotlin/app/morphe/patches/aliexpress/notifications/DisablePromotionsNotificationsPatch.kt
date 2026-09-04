@@ -13,9 +13,9 @@ internal object PushShowFingerprint : Fingerprint(
 val disablePromotionsNotificationsPatch = bytecodePatch(
     name = "Disable promotions notifications",
     description = "Disables promotional push notifications for deals and coupons.",
-    default = true,
-    dependencies = listOf("Bypass signature check"),
+    default = true
 ) {
+    dependencies = listOf("Bypass signature check")
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {

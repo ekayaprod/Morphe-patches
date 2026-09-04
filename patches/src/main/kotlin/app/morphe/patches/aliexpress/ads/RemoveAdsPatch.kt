@@ -13,9 +13,9 @@ internal object AdcInitFingerprint : Fingerprint(
 val removeAdsPatch = bytecodePatch(
     name = "Remove ads",
     description = "Removes sponsored products and advertisements from the AliExpress home feed and search results.",
-    default = true,
-    dependencies = listOf("Bypass signature check"),
+    default = true
 ) {
+    dependencies = listOf("Bypass signature check")
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
     execute {
