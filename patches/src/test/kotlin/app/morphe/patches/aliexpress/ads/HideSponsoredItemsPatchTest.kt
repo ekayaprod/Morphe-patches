@@ -16,7 +16,7 @@ class HideSponsoredItemsPatchTest {
 
     @Test
     fun verifyHideSponsoredItemsPatchDependencies() {
-        assertTrue(hideSponsoredItemsPatch.dependencies.any { it.name == "Bypass signature check" })
+        assertTrue(hideSponsoredItemsPatch.dependencies.contains(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch))
         assertEquals(COMPATIBILITY_ALIEXPRESS, hideSponsoredItemsPatch.compatibleWith)
     }
 
