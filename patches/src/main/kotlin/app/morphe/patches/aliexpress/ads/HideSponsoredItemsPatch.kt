@@ -13,9 +13,9 @@ internal object AdcReportFingerprint : Fingerprint(
 val hideSponsoredItemsPatch = bytecodePatch(
     name = "Remove sponsored items from search",
     description = "Filters out sponsored and promoted products from search results.",
-    default = true,
-    dependencies = listOf("Bypass signature check"),
+    default = true
 ) {
+    dependencies(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch)
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
     dependencies = listOf("Bypass signature check")
 

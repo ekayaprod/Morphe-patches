@@ -13,9 +13,9 @@ internal object AnalyticsInitFingerprint : Fingerprint(
 val disableAnalyticsPatch = bytecodePatch(
     name = "Disable analytics",
     description = "Blocks analytics and tracking sent to AliExpress servers.",
-    default = true,
-    dependencies = listOf("Bypass signature check"),
+    default = true
 ) {
+    dependencies(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch)
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
     dependencies = listOf("Bypass signature check")
 

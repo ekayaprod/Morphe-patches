@@ -13,9 +13,9 @@ internal object TrackHelperFingerprint : Fingerprint(
 val removeAffiliateTrackingPatch = bytecodePatch(
     name = "Remove affiliate tracking",
     description = "Removes affiliate tracking parameters from shared links.",
-    default = true,
-    dependencies = listOf("Bypass signature check"),
+    default = true
 ) {
+    dependencies(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch)
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
     dependencies = listOf("Bypass signature check")
 

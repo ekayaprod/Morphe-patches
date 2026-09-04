@@ -13,9 +13,9 @@ internal object PushShowFingerprint : Fingerprint(
 val disablePromotionsNotificationsPatch = bytecodePatch(
     name = "Disable promotions notifications",
     description = "Disables promotional push notifications for deals and coupons.",
-    default = true,
-    dependencies = listOf("Bypass signature check"),
+    default = true
 ) {
+    dependencies(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch)
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
     dependencies = listOf("Bypass signature check")
 

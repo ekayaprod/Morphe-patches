@@ -13,9 +13,9 @@ internal object UpdateCheckFingerprint : Fingerprint(
 val disableForcedUpdatesPatch = bytecodePatch(
     name = "Disable forced updates",
     description = "Disables the forced update popup that prevents using older versions of the app.",
-    default = true,
-    dependencies = listOf("Bypass signature check"),
+    default = true
 ) {
+    dependencies(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch)
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
     dependencies = listOf("Bypass signature check")
 
