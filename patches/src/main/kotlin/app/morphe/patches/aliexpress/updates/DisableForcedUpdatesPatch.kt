@@ -17,6 +17,7 @@ val disableForcedUpdatesPatch = bytecodePatch(
     dependencies = listOf("Bypass signature check"),
 ) {
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
+    dependencies = listOf("Bypass signature check")
 
     execute {
         UpdateCheckFingerprint.method.apply {

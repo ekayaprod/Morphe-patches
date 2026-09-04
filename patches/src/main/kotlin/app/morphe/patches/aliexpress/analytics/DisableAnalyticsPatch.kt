@@ -17,6 +17,7 @@ val disableAnalyticsPatch = bytecodePatch(
     dependencies = listOf("Bypass signature check"),
 ) {
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
+    dependencies = listOf("Bypass signature check")
 
     execute {
         AnalyticsInitFingerprint.method.apply {

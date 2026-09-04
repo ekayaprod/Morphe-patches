@@ -17,6 +17,7 @@ val removeAdsPatch = bytecodePatch(
     dependencies = listOf("Bypass signature check"),
 ) {
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
+    dependencies = listOf("Bypass signature check")
 
     execute {
         val targetMethod = AdcInitFingerprint.methodOrNull ?: throw IllegalStateException(

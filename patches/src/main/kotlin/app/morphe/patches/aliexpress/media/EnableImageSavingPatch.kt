@@ -17,6 +17,7 @@ val enableImageSavingPatch = bytecodePatch(
     dependencies = listOf("Bypass signature check"),
 ) {
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
+    dependencies = listOf("Bypass signature check")
 
     execute {
         MediaSaveFingerprint.method.apply {
