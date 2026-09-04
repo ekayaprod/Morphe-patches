@@ -10,12 +10,14 @@ public final class DisablePromotionsNotificationsPatch {
     public static boolean isPromotionalNotification(String title, String body) {
         if (title == null) title = "";
         if (body == null) body = "";
-        return title.contains("promotion")
-            || title.contains("coupon")
-            || title.contains("deal")
-            || title.contains("sale")
-            || body.contains("promotion")
-            || body.contains("coupon")
-            || body.contains("discount");
+        String lowerTitle = title.toLowerCase(java.util.Locale.ROOT);
+        String lowerBody = body.toLowerCase(java.util.Locale.ROOT);
+        return lowerTitle.contains("promotion")
+            || lowerTitle.contains("coupon")
+            || lowerTitle.contains("deal")
+            || lowerTitle.contains("sale")
+            || lowerBody.contains("promotion")
+            || lowerBody.contains("coupon")
+            || lowerBody.contains("discount");
     }
 }

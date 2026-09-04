@@ -30,4 +30,16 @@ public class DisablePromotionsNotificationsPatchTest {
         assertFalse(DisablePromotionsNotificationsPatch.isPromotionalNotification("Message from seller", "Your item is out of stock"));
         assertFalse(DisablePromotionsNotificationsPatch.isPromotionalNotification("Account update", "Password changed successfully"));
     }
+
+    @Test
+    public void isPromotionalNotification_identifiesPromotionsCaseInsensitive() {
+        assertTrue(DisablePromotionsNotificationsPatch.isPromotionalNotification("PROMOTION ALERT", "Great DEALS inside"));
+        assertTrue(DisablePromotionsNotificationsPatch.isPromotionalNotification("Here is your CoUPoN", "Claim it now"));
+        assertTrue(DisablePromotionsNotificationsPatch.isPromotionalNotification("Big DEAL today", "Save 50%"));
+        assertTrue(DisablePromotionsNotificationsPatch.isPromotionalNotification("Flash SALE", "Hurry up!"));
+
+        assertTrue(DisablePromotionsNotificationsPatch.isPromotionalNotification("Normal title", "We have a PROMOTION for you"));
+        assertTrue(DisablePromotionsNotificationsPatch.isPromotionalNotification("Normal title", "Use this COUPON code"));
+        assertTrue(DisablePromotionsNotificationsPatch.isPromotionalNotification("Normal title", "Get a DiScOuNt on your next order"));
+    }
 }
