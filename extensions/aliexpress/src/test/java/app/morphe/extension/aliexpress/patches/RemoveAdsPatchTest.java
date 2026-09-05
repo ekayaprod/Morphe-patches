@@ -9,11 +9,19 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 
+// Extracting mock classes to the top level prevents them from inheriting the test class's name
+// (which contains "Ad" and "Patch") in their fully qualified name, avoiding false positives
+// during case-insensitive reflection matching.
 class NormalProductItem {}
 class SponsoredProductItem {}
 class CustomAdItemView {}
 class RandomAdvertisementView {}
+class MixedCaseADiTem {}
+class UPPERCASEADITEM {}
+class UPPERCASESPONSORED {}
+class CamelCaseSponsoredItem {}
 
 public class RemoveAdsPatchTest {
 
@@ -65,5 +73,22 @@ public class RemoveAdsPatchTest {
         assertEquals("Filtered list should retain normal and null items", 2, result.size());
         assertEquals("First item should be NormalProductItem", NormalProductItem.class, result.get(0).getClass());
         assertNull("Second item should be null", result.get(1));
+    }
+
+    @Test
+    public void testFilterAds_CaseInsensitivityBoundaries() {
+        List<Object> items = Arrays.asList(
+            new NormalProductItem(),
+            new UPPERCASEADITEM(),
+            new UPPERCASESPONSORED(),
+            new MixedCaseADiTem(),
+            new CamelCaseSponsoredItem()
+        );
+
+        List<Object> result = RemoveAdsPatch.filterAds(items);
+
+        assertNotNull("Result should not be null", result);
+        assertEquals("Should filter out all ad-related items regardless of case", 1, result.size());
+        assertEquals("Only NormalProductItem should remain", NormalProductItem.class, result.get(0).getClass());
     }
 }
