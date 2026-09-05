@@ -15,7 +15,7 @@ val hideSponsoredItemsPatch = bytecodePatch(
     description = "Filters out sponsored and promoted products from search results.",
     default = true
 ) {
-    dependency(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch)
+    dependencies(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch)
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
 
