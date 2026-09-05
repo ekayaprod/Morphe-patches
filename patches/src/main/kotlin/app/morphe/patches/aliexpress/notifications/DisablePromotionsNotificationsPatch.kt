@@ -15,7 +15,7 @@ val disablePromotionsNotificationsPatch = bytecodePatch(
     description = "Disables promotional push notifications for deals and coupons.",
     default = true
 ) {
-    dependencies(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch)
+    dependency(app.morphe.patches.aliexpress.security.bypassSignatureCheckPatch)
     compatibleWith(COMPATIBILITY_ALIEXPRESS)
 
 
